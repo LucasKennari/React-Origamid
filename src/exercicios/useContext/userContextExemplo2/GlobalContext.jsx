@@ -12,6 +12,7 @@ export const GlobalContext = React.createContext()
 
 // // 6 e dentro dele é passado o children, que é das props
 export const GlobalStorage = ({ children }) => {
+
           const [contar, setContar] = React.useState(0)
           function adicionarUm() {
                     setContar((contar) => contar + 1)
