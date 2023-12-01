@@ -1,11 +1,12 @@
 import React from 'react'
-import { GlobalStorage } from './exercicios/useContext/useContextExemplo3-Exercicio/useContext3'
-import ProdutoExercicio from './produtos/ProdutoExercicio'
+import useLocalStorage from './exercicios/customHooks/useLocalStorage/useLocalStorage'
+
 const App = () => {
+          const [produto, useproduto] = useLocalStorage("produto", "")
           return (
-                    <GlobalStorage >
-                              <ProdutoExercicio />
-                    </GlobalStorage >
+                    <div>
+                              <button onClick={({ target }) => useproduto(target.innerText)}>notebook</button>
+                    </div>
           )
 }
 

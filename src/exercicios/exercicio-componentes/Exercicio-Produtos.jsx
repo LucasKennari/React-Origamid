@@ -1,7 +1,7 @@
 import React from 'react'
-import Titulo from '../components/titulo/Titulo'
-import PrecoItensAmostra from '../components/form/precoItensAmostra/PrecoItensAmostra'
-import ImagemProdutoAmostra from '../components/imagem/ImagemProdutoAmostra/ImagemProdutoAmostra'
+import Titulo from '../../components/titulo/Titulo'
+import PrecoItensAmostra from '../../components/form/precoItensAmostra/PrecoItensAmostra'
+import ImagemProdutoAmostra from '../../components/imagem/ImagemProdutoAmostra/ImagemProdutoAmostra'
 const ExercicioProdutos = ({ dados }) => {
 
           return (
