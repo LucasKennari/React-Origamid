@@ -1,9 +1,12 @@
 import React from 'react'
 import style from '../../style.module/style.module.css'
 import Titulo from "../../titulo/Titulo"
+
 const Button = async ({ texto, style, }) => {
+
           const [Produto, setProduto] = React.useState(null)
           const [dadoTitulo, setDadoTitulo] = React.useState("")
+
           async function handleClick(e) {
                     window.localStorage.clear()
                     const url = await fetch(`
