@@ -1,5 +1,5 @@
 import React from 'react'
-import useLocalStorage from './exercicios/customHooks/useLocalStorage/useLocalStorage'
+import useLocalStorage from './useLocalStorage'
 
 const App = () => {
           const [produto, useproduto] = useLocalStorage("produto", "")
