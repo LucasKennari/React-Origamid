@@ -1,12 +1,16 @@
 import React from 'react'
-import FormsCadastro from './components/form/Form'
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Home from "../src/home/Home"
 
 const App = () => {
 
           return (
-                    <>
-                              <FormsCadastro />
-                    </>
+                    <BrowserRouter>
+                              <Routes>
+                                        <Route path='/' element={<Home />} />
+                              </Routes>
+
+                    </BrowserRouter>
           )
 }
 
