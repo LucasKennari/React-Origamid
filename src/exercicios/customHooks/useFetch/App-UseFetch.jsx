@@ -5,7 +5,9 @@ const App = () => {
 
           React.useEffect(() => {
                     async function fetchData() {
-                              const { response, json } = await request("https://pear-abalone-hat.cyclic.cloud/categorias")
+                              const { response, json } = await request(" https://ranekapi.origamid.dev/json/api/produto")
+                              console.log(response)
+                              console.log(json)
 
                     }
                     fetchData()
@@ -26,7 +28,7 @@ const App = () => {
                               <div>
                                         {data.map((item) => {
                                                   return (
-                                                            <li key={item.id}>{item.descricao}</li>
+                                                            <li key={item.id}>{item.nome}</li>
                                                   )
                                         })}
                               </div>

@@ -1,13 +1,15 @@
 import React from 'react'
-
+import { NavLink } from 'react-router-dom'
 const Header = () => {
           return <header style={{
-                    background: '#D6DBDF',
+                    background: '#9741E8',
                     margin: '0px',
                     padding: '0px',
                     textDecoration: 'none',
                     borderBottom: '1px solid #212F3D',
-                    marginBottom: '10px'
+                    marginBottom: '10px',
+
+                    borderRadius: "10px"
           }}>
                     <section>
                               <nav >
@@ -20,20 +22,26 @@ const Header = () => {
                                                   listStyleType: 'none',
                                                   justifyContent: 'space-evenly',
                                                   textDecorationLine: 'none',
-
+                                                  color: "#CCC"
                                         }}>
-                                                  <li>
-                                                            <a href="/">Home</a>
-                                                  </li>
+                                                  <NavLink to="/" end>
+                                                            Home
+                                                  </NavLink>
 
 
-                                                  <li>
-                                                            <a href="/produtos">Produtos</a>
-                                                  </li>
+                                                  <NavLink to="sobre">
+                                                            Sobre
+                                                  </NavLink>
 
-                                                  <li>
-                                                            <a href="/cadastro">Cadastro</a>
-                                                  </li>
+                                                  <NavLink to="cadastro">
+                                                            Cadastro
+                                                  </NavLink>
+                                                  <NavLink to="login">
+                                                            Login
+                                                  </NavLink>
+                                                  <NavLink to="perfil">
+                                                            Perfil
+                                                  </NavLink>
                                         </ul>
                               </nav>
                     </section>

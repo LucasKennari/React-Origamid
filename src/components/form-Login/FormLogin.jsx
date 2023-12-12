@@ -1,34 +1,41 @@
 import React from 'react'
-import Input from './input/Input'
+import Input from '../form/input/Input'
 import useFetch from "../../exercicios/customHooks/useFetch/useFetch"
-const FormsCadastro = () => {
+import { useNavigate } from 'react-router-dom'
+const FormsLogin = () => {
+
+          const navigate = useNavigate()
 
           const { data, error, loading, request } = useFetch()
           const [nome, setNome] = React.useState("")
           const [email, setEmail] = React.useState("")
           const [senha, setSenha] = React.useState("")
           const form = {
-                    nome,
                     email,
                     senha
           }
           const [response, setResponse] = React.useState("")
-          const [botaoValor, setBotaoValor] = React.useState("Registrar")
+          const [botaoValor, setBotaoValor] = React.useState("Logar")
           async function handleSubmit(e) {
                     e.preventDefault()
-                    const { response, json } = await request("https://pear-abalone-hat.cyclic.cloud/usuario", {
+                    const { response, json } = await request("https://pear-abalone-hat.cyclic.cloud/login", {
                               method: "POST",
                               headers: {
                                         'Content-Type': "application/json",
                               },
                               body: JSON.stringify(form)
                     })
-                    setResponse(response)
-                    setTimeout(() => {
+                    !response && setTimeout(() => {
                               setBotaoValor(<img style={{
-                                        width: "100"
+                                        width: "30px"
                               }} src="Iphone-spinner-2.gif" alt="" />)
-                    }, [1000])
+                    }, [500])
+
+                    setResponse(response)
+                    console.log(response.status)
+                    if (response.ok === true && response.status === 200) {
+                              return navigate("perfil")
+                    }
 
           }
 
@@ -44,11 +51,7 @@ const FormsCadastro = () => {
                     >
 
 
-                              <Input id="nome"
-                                        label="Nome"
-                                        value={nome}
-                                        onChange={({ target }) => setNome(target.value)}
-                                        required />
+
 
 
                               <Input id="email"
@@ -78,10 +81,10 @@ const FormsCadastro = () => {
                                         justifyItems: 'end',
                                         borderBottom: "1px solid #9741E8",
                                         " flex-wrap": "nowrap"
-                              }} htmlFor="">Possui uma conta?</label>
+                              }} htmlFor="">Crie uma Conta</label>
 
                     </form>
           )
 }
 
-export default FormsCadastro
+export default FormsLogin

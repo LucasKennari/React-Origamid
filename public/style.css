@@ -19,7 +19,10 @@ a:link {text-decoration: none;}
 
 
 body {
-  margin: 1.5rem;
+     
+                    margin: 0px;
+                    padding:0px
+          
 }
 
 body,
@@ -43,12 +46,13 @@ h3 {
 h1,
 h2,
 h3,
-p,
-ul {
+p
+{
   margin: 1rem 0;
 }
 
 ul {
+          margin: 0px;
   list-style: square;
 }
 

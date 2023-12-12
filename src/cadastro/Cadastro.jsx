@@ -1,5 +1,5 @@
 import React from 'react'
-import FormsCadastro from '../components/form/form'
+import FormsCadastro from '../components/form/Form2'
 
 const Cadastro = () => {
           return (
